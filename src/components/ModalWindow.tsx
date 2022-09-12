@@ -7,13 +7,17 @@ interface ModalWindowProps{
 
 const ModalWindow = ({children, title}: ModalWindowProps) => {
   return (
-    <div style={{width: '500px', height:'200px', border: '2px solid black'}}>
-      <h1>{title}</h1>
+    <>
+      <div className="modal_window"/>
+      
+      <div className='modal_window_border'>
+        <h1>{title}</h1>
 
-      {children}
-
-
-    </div>
+        {children}
+      </div>
+        
+      
+    </>
   )
 }
 

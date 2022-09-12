@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 
+
 const CreateItem = () => {
 
   const [form, setForm] = useState({
@@ -21,7 +22,8 @@ const CreateItem = () => {
   }   
 
   return (
-    <form onSubmit={submitHandler}>
+    <form className='create_item_form' onSubmit={submitHandler}>
+
         <label htmlFor="name">Название</label>
         <input
           type="text"
