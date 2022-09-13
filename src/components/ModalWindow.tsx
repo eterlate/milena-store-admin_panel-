@@ -1,19 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import CreateItem from './CreateItem'
 
-interface ModalWindowProps{
-  children: React.ReactNode
-  title: string
-}
 
-const ModalWindow = ({children, title}: ModalWindowProps) => {
+const ModalWindow = () => {
+  const [hide,setHide] = useState(false)
+  
+  useEffect(()=>{
+    
+  })
+
+  if(hide){
+    return <></>
+  }
   return (
     <>
       <div className="modal_window"/>
       
       <div className='modal_window_border'>
-        <h1>{title}</h1>
+        <h1></h1>
 
-        {children}
+        <CreateItem setHide={setHide}/>
       </div>
         
       

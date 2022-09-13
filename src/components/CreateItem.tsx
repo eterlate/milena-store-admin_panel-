@@ -1,7 +1,10 @@
 import React, {useState} from 'react'
 
+interface ICreateItem{
+  setHide:(hide:boolean)=>void
+}
 
-const CreateItem = () => {
+const CreateItem = ({setHide}:ICreateItem) => {
 
   const [form, setForm] = useState({
     name: '',
@@ -72,7 +75,7 @@ const CreateItem = () => {
         onChange={changeForm}
         />
 
-        <button type='submit'>Готово</button>
+        <button type='submit' onClick={()=>{setHide(true)}}>Готово</button>
     </form>
   )
 }
