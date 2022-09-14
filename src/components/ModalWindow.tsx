@@ -3,7 +3,7 @@ import CreateItem from './CreateItem'
 
 
 const ModalWindow = () => {
-  const [hide,setHide] = useState(false)
+  const [hide,setHide] = useState(true)
   
   useEffect(()=>{
     

@@ -4,7 +4,7 @@ import CreateItem from './components/CreateItem';
 import MainPage from './components/MainPage';
 
 function App() {
-  // const [modal, setModal] = useState(false)
+
   
   return (
     <div>
