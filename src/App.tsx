@@ -1,18 +1,32 @@
-import React,{useState} from 'react';
-import ModalWindow from './components/ModalWindow';
-import CreateItem from './components/CreateItem';
-import MainPage from './components/MainPage';
+import React, { useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import ModalWindow from "./components/ModalWindow";
+import CreateItem from "./components/CreateItem";
+import MainPage from "./pages/MainPage";
+import { userRoutes } from "./Routes";
+import { useAuth } from "./hooks/auth.hook";
+import { AuthContext } from "./context/AuthContext";
 
 function App() {
-
-  
+  const {token,ready,enter,out} = useAuth()
+  const routes = userRoutes(!!token)
+  if(!ready){
+    return(
+      <div>Loading</div>
+    )
+  }
+  console.log(token)
   return (
-    <div>
-      <MainPage/>
-        <ModalWindow/>
-    </div>
+    <AuthContext.Provider value={{
+      enter, out, token, ready
+    }}>
+      <Router>
+        <div>
+          {routes}
+        </div>
+      </Router>
+    </AuthContext.Provider>
   );
-
 }
 
 export default App;
