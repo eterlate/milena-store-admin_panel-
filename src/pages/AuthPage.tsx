@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext'
 
 const AuthPage = () => {
     const {enter, out} = useContext(AuthContext)
-
+    const navigate = useNavigate()
     const [form, setForm] = useState({
         login: '', 
         password: ''
@@ -13,6 +13,7 @@ const AuthPage = () => {
         event.preventDefault()
         console.log(form)
         enter(form.login,form.password)
+        navigate('/')
     }
 
     const changeForm = (event: React.ChangeEvent<HTMLInputElement>) => {

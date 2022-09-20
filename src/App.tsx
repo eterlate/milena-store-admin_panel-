@@ -6,14 +6,13 @@ import MainPage from "./pages/MainPage";
 import { userRoutes } from "./Routes";
 import { useAuth } from "./hooks/auth.hook";
 import { AuthContext } from "./context/AuthContext";
+import Loader from "./components/Loader";
 
 function App() {
   const {token,ready,enter,out} = useAuth()
   const routes = userRoutes(!!token)
   if(!ready){
-    return(
-      <div>Loading</div>
-    )
+    return <Loader/>
   }
   console.log(token)
   return (
