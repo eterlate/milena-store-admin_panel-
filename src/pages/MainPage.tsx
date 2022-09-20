@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const MainPage = () => {
   return (
@@ -7,7 +8,9 @@ const MainPage = () => {
             <h1>Панель администратора</h1>
             <div className='main_buttons'>
                 <div className='top_buttons'>
-                    <button className='main_button'>Создать товар</button>
+                <Link className='main_button' to={'/create_item'}>
+                  Создать товар
+                </Link>
                     <button className='main_button'>Создать категорию</button>
                     <button className='main_button'>Поиск</button>
                 </div>

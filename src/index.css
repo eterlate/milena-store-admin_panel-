@@ -11,6 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+a{
+  text-decoration: none;
+  color: black;
+}
 
 /* loader */
 .lds-ring {
@@ -48,9 +52,8 @@ code {
     transform: rotate(360deg);
   }
 }
-
-
 /* loader - end */
+
 .container{
   max-width: 1300px;
   margin: 0 auto;
@@ -79,6 +82,9 @@ code {
 }
 
 .main_button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid blueviolet;
   border-radius: 10px;
   width: 200px;

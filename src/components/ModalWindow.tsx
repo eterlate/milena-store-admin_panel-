@@ -3,15 +3,6 @@ import CreateItem from './CreateItem'
 
 
 const ModalWindow = () => {
-  const [hide,setHide] = useState(true)
-  
-  useEffect(()=>{
-    
-  })
-
-  if(hide){
-    return <></>
-  }
   return (
     <>
       <div className="modal_window"/>
@@ -19,7 +10,7 @@ const ModalWindow = () => {
       <div className='modal_window_border'>
         <h1></h1>
 
-        <CreateItem setHide={setHide}/>
+        <CreateItem/>
       </div>
         
       

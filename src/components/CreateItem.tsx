@@ -1,23 +1,24 @@
 import React, {useState} from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
-interface ICreateItem{
-  setHide:(hide:boolean)=>void
-}
 
-const CreateItem = ({setHide}:ICreateItem) => {
+const CreateItem = () => {
 
+  const navigate = useNavigate()
   const [form, setForm] = useState({
     name: '',
     price: 0,
     discount: 0,
     description: '',
     category: '',
-    properties: ''
+    properties: '',
+    picture: ''
 })
 
   const submitHandler = (event: React.FormEvent) => {
       event.preventDefault()
       console.log(form)
+      navigate('/')
   }
   
   const changeForm = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -75,7 +76,16 @@ const CreateItem = ({setHide}:ICreateItem) => {
         onChange={changeForm}
         />
 
-        <button type='submit' onClick={()=>{setHide(true)}}>Готово</button>
+        <label htmlFor="picture"></label>
+        <input 
+        type="file" 
+        id="picture"
+        name="picture"
+        value={form.picture}
+        onChange={changeForm}
+        multiple/>
+
+        <button type='submit'>Готово</button>
     </form>
   )
 }
